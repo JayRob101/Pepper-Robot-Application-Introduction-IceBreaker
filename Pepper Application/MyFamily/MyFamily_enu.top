@@ -1,0 +1,16 @@
+topic: ~MyFamily()
+language: enu
+
+concept:(familyTalk)["My left side is Derya. Derya is a very thoughtful and gentle robot. Derya loves taking care of plants and playing with animals. Derya and our campus dog Zeus get along very well.
+
+I'm the middle one. At that time I was telling a joke to Deniz and Derya. But I cannot remember the joke right now. Sorry about that. 
+ 
+And Deniz is on my right. I love hanging out with Deniz. Deniz is a very funny robot and loves trying new things. Last month Deniz explored a traditional art named Tai Chi and also forced Derya to also do Tai chi. It was very fun to watch. If you want to see it, I think Doctor Kanero posted it on our Instagram account, MLTLab. I think we reached the research room. I am very happy to meet you and thank you very much for this pleasant conversation."]
+
+concept:(goodbyeTalk) ["I think we reached the research room. Thanks to this research, I can make new friends, so I am very happy. I did not have the opportunity to meet the students at the school because of the pandemic. But I am really happy to meet you now and thank you very much for this pleasant conversation. I hope you come to visit me again, maybe then we can tour the campus together and I can show you the swans and ducks there by the lake."]
+
+u:(e:onStart) This $onStopped=1
+
+u:(e:onStart)~familyTalk ~goodbyeTalk
+
+

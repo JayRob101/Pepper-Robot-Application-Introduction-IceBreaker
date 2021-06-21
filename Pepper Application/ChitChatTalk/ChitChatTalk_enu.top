@@ -1,0 +1,48 @@
+topic: ~ChitChatTalk()
+language: enu
+
+# Defining extra concepts out of words or group of words
+#concept:(hello) [hello hi hey "good morning" greetings]
+
+# Catching inputs and triggering outputs
+#u:(e:onStart) $onStopped=1
+
+# Replying to speech
+#u:(~hello) ~hello
+
+#concept:(Greetings)[Hello Hi Hey]
+
+concept:(Yes) [yes okay sure "why not" "I will" "yes, I will watch the movie"]
+
+concept:(No) [no "not now" "maybe later"]
+
+#concept: (NegativeMoods) [ bad bored "I'm bored." sad "I'm sad." nervous "I'm tired" tired exhausted "I'm exhausted"]
+
+#concept: (PositiveMoods) ["I'm fine." fine good excited curious]
+
+#concept: (Movies)["Last night I watched Wall-e with Deniz, Derya, and Doctor Kanero. I loved the movie so much! It is about protecting the environment so that we can continue living on earth for many many years. In the movie, there is a robot named Wall-e and he is trying to clean the Earth by himself. Wall-e is a very kind robot, always tries to help everybody. And there is another robot called Eve who sent Earth for a mission. Eve is also very cool! She can fly and also moves very fast. I wish I can fly like her, maybe someday lab members help me to do that!" 
+
+#"Last night I watched Kung Fu Panda with Deniz, Derya, and Doctor Kanero. I loved the movie so much! It is about a panda named Po who wants to be a dragon warrior. He is a very kind but clumsy panda and he loves eating so much. He works very hard to learn kung fu and achieve his dream. He faces so many hardships but he didn't give up. Po also makes lots of friends during his journey. Their names are Master Shifu, Tigress, Oogway, Mantis, Viper, Monkey, and Crane. Besides Po, I like tigress so much! She is very cool, calm and strong! After the movie, I watched so many kung fu videos on Youtube. I also work very hard and become a kung fu master myself. Maybe lab members help me a little bit by adding some kung fu movements to my system. Then I will be very cool too! Doctor Kanero said that when after I learn some kung fu moves, she can share a video of me on our Instagram account, you can see my kung fu moves if you follow our account."
+
+#"Last night I watched Ratatouille with Deniz, Derya, and Doctor Kanero. I loved the movie so much! It is about a rat named Remy who wants to become a well-known French chef. He overcomes great difficulties in order to realize his dream of becoming a chef. But during his journey, his imaginary friend Chief Gusteau and his new friend Linguini supported him so much. Remy helps Linguini in cooking by getting under Linguini's hat and tugging at his hair. So the two of them become a team and work together to help each other make their dreams come true. By the way, there were so many good foods in the movie that I was very hungry while watching it. Because of that, I decided to learn how to cook. Doctor Kanero said she could teach me a few recipes, so I'm very very excited about it! Maybe lab members can also help me by uploading a few recipes to my system. Doctor Kanero said that when I cook my first meal, she can share it on our Instagram account, if you want, you can see my first meal there."]
+
+#concept: (Songs) ["Well, let me tell you about the first music I heard. As you know, I get activated when I heard some greeting sound. As Adele was singing her song 'Hello', I woke up with the lyrics part." 
+
+#"One of the musics I know is 'Blurred Lines' by Pharrel Williams. In lyrics there's so many hey sound which triggers me. That's why it's in the list of the songs i listened" 
+
+#"You would probably guess that one of the greetings word that I react is 'hi', some of the students working in MLTLab was listening Amy Shark's 'I Said Hi'. Interestintgly, I reacted to lyrics of that song. I guess it's not a very popular song but I guess I got a particular taste. " ]
+
+#---------------------------------
+
+#u:(~Greetings) Hello, My name is Doa. How are you feeling today?
+#u:(~PositiveMoods) Glad to here that. Can I tell you about a movie that I watched last night while we are going to the research room?
+#u:(~NegativeMoods) I'm sorry to hear that. Can I tell you about a movie that I watched last night? It may cheer you up! Please say yes.
+#u: (~Yes) ~Movies ^nextProposal
+#u:(~No) Then I will tell you about the first song I listened. ~Songs ^nextProposal
+
+proposal: %instagram By the way, I am living in Sabanci University with my family. If you have time, can I show you my family?
+    u1:(~Yes) $instagram = 1
+    u1:(~No) Oh okay, maybe next time I can show them to you.
+ 
+#No derse odaya giriş süresine göre pause ekle ve veda konuşmasının zamanını ayarla
+
